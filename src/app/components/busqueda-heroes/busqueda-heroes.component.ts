@@ -9,19 +9,21 @@ import { HeroesService, Heroe } from 'src/app/servicios/heroes.service';
 })
 export class BusquedaHeroesComponent implements OnInit {
 
+  tmpTermino: string;
   heroesB: Heroe[];
 
-  constructor( ){}
+  constructor(
+        private activatedRoute: ActivatedRoute, 
+        private _heroesService: HeroesService ) { 
 
-  //       private activatedRoute: ActivatedRoute, 
-  //       private _heroesService: HeroesService ) { 
-  //   this.activatedRoute.params.subscribe( params => {
-  //   console.log( params['termino'] );
+    this.activatedRoute.params.subscribe( params => {
+      console.log( params['termino'] );
+      this.tmpTermino = params['termino'];
     
   //   this.heroesB = this._heroesService.buscarHeroe( params['termino'] );
   //   console.log( this.heroesB );
-  //   })
-  // }
+     })
+  }
 
   ngOnInit() {
   }

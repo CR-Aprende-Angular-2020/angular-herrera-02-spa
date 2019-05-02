@@ -14,8 +14,8 @@ export class NavbarComponent implements OnInit {
 
   buscarHeroe( termino: string ) {
     console.log( termino );
-    //this.router.navigate( ['/heroe', termino] );
-    this.router.navigate( ['/busqueda-heroes'] );
+    this.router.navigate( ['/busqueda-heroes', termino] );
+    //this.router.navigate( ['/busqueda-heroes'] );
   }
 
 }
