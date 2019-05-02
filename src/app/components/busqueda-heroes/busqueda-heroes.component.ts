@@ -20,8 +20,8 @@ export class BusquedaHeroesComponent implements OnInit {
       console.log( params['termino'] );
       this.tmpTermino = params['termino'];
     
-  //   this.heroesB = this._heroesService.buscarHeroe( params['termino'] );
-  //   console.log( this.heroesB );
+     this.heroesB = this._heroesService.buscarHeroe( params['termino'] );
+     console.log( this.heroesB );
      })
   }
 
