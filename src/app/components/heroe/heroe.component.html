@@ -1,4 +1,24 @@
 
-<p>
-  {{ heroe.nombre }} works!
-</p>
+<h1> {{ heroe.nombre | uppercase }} <small>({{ heroe.aparicion | date:'y' }}) </small></h1>
+
+<hr>
+
+<div class="row animated fadeIn fast">
+
+    <div class="col-md-4">
+      <img [src]="heroe.img" class="img-fluid"  alt="">
+      <br><br>
+      <a class="btn btn-outline-danger btn-block" [routerLink]="['/heroes']" >Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{ heroe.nombre }}</h3>
+        <p>{{ heroe.bio }}</p> 
+
+        <div>
+            <img *ngIf="heroe.casa=='DC'" class="img-logo" src="assets/img/DClogo.png" alt="">
+            <img *ngIf="heroe.casa!='DC'" class="img-logo" src="assets/img/marvel.jpg" alt="">
+        </div>
+    </div>
+
+</div> 
